@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data & Models (если слишком тяжелые)
+*.pkl
+*.joblib

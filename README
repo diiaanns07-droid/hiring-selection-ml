@@ -1,0 +1,41 @@
+# 🎯 Hiring Candidate Selection ML Model
+
+Энд-ту-энд Data Science проект по анализу факторов, влияющих на процесс отбора кандидатов при найме, и прогнозированию вердикта (`Selected` / `Rejected`).
+
+---
+
+## 📊 Overview & Key Findings
+
+- **Размер датасета:** 100,000 записей, 44 признака.
+- **Главная проблема данных:** Высокая мультиколлинеарность (коэффициенты ~0.99 между `age`, `experience_years`, `graduation_year` и `expected_salary`).
+- **Ключевой фактор найма:** `experience_years` формирует более **46%** итогового решения модели.
+
+### 🚀 Результаты моделей
+| Модель | Accuracy | Precision | Recall |
+| :--- | :---: | :---: | :---: |
+| **Logistic Regression (Baseline)** | 80.40% | 0.80 | 0.80 |
+| **Random Forest Classifier** | **83.63%** | **0.84** | **0.84** |
+
+---
+
+## 🛠️ Pipeline & Methodology
+
+1. **Exploratory Data Analysis (EDA):**
+   - Анализ распределений, устранение невалидных данных и мультиколлинеарных колонок.
+   - Отбор 7 самых информативных признаков (`experience_years`, `technical_test_score`, `interview_score`, `ats_score`, `cgpa`, `problem_solving_score`, `communication_score`).
+
+2. **Feature Importance (Random Forest):**
+   - `experience_years`: ~46.2%
+   - `cgpa`: ~10.0%
+   - `technical_test_score`: ~9.9%
+   - `interview_score`: ~9.7%
+   - Остальные мягкие/жесткие навыки поделили оставшиеся ~24%.
+
+---
+
+## 💻 How to Run
+
+1. Клонируйте репозиторий:
+   ```bash
+   git clone [https://github.com/your-username/hiring-selection-ml.git](https://github.com/your-username/hiring-selection-ml.git)
+   cd hiring-selection-ml
